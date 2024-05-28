@@ -15,6 +15,6 @@
 * Install the pip requirements by running
  `pip install -r requirements.txt`
  
- * Run the `websocket_player.py` python file from PyCharm or just run `python3 run.py` from the console
+ * Run the `websocket_player.py` python file from PyCharm or just run `websocket_player.py` from the console
  * The websocket server will be running on your local IP address on port 2053.
  * To View the data run `flask_app.py` and the data will be viewable at local address on port 8000.
