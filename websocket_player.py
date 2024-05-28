@@ -4,7 +4,7 @@ import json
 
 # Load JSON data from the file
 try:
-    with open('data.json.txt', 'r') as f:
+    with open('data.txt', 'r') as f:
         json_data = f.readlines()
         print(f"Loaded {len(json_data)} lines of data from file.")
 except Exception as e:
@@ -14,11 +14,10 @@ except Exception as e:
 async def send_data(websocket, path):
     try:
         print("Client connected")
-        while True:  # Loop indefinitely
-            for line in json_data:
-                await websocket.send(line.strip())
-                print(f"Sent data: {line.strip()}")
-                # await asyncio.sleep(0.1)  # Delay to simulate real-time data stream
+        for line in json_data:
+            await websocket.send(line.strip())
+            print(f"Sent data: {line.strip()}")
+            await asyncio.sleep(1)  # Add delay to simulate real-time data stream
     except websockets.exceptions.ConnectionClosedError as e:
         print(f"Connection closed with error: {e}")
     except Exception as e:
