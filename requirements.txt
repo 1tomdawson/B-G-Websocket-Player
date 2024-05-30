@@ -2,5 +2,5 @@ flask
 flask_cors
 asyncio
 websockets
-json
+
 
